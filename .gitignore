@@ -1,2 +1,4 @@
 # MATLAB editor backup files.
 *.asv
+__pycache__/
+*.pyc

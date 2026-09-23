@@ -26,7 +26,7 @@
 
 ## 稳健性检验
 
-0.1 Hz 下项目二有较强缓慢抬升。以 A 项目二 F3 的右减左曲线为例，在固定扩展窗口合格试次上，250–500 ms 均值从 0.1 Hz 下约 45.6 个源数据单位变为 0.5 Hz 下约 8.6。这个差异说明低频特征不够稳健，不能仅凭一张 0.1 Hz 曲线声称左右形状差异。
+0.1 Hz 下项目二有较强缓慢抬升。既有扩展窗诊断中，A 项目二 F3 的右减左 250–500 ms 均值从 0.1 Hz 下约 45.6 变为 0.5 Hz 下约 8.6 个源数据单位；该诊断在 350 个主分析试次之外额外排除 17 次，实际为 333 次口径。本轮高通专项严格固定主分析的 350 次，保持事件、基线、30 Hz 低通、Huber 与平滑参数，0.10/0.20/0.25/0.50 Hz 对应均值为 61.33/44.50/37.72/18.54。记录 B 同一任务和电极为 19.55/20.51/22.77/3.29，未复现 A 的下降幅度。较低频率保留更多提示前低频波动，0.50 Hz 则明显削弱慢响应；现有证据支持 0.20–0.25 Hz 为待确认的折中范围，其中 0.20 Hz 可作为后续工作的暂定设置。半模拟恢复排序随参考模板的低频内容改变，因此不能把某个截止频率称为已证实的唯一最优值。完整方法、12 组合数据和恢复实验见 `q1_highpass_decision_report.md` 与 `results_highpass/`，当前正式主程序仍保持 0.5 Hz。
 
 0.5 Hz 主分析中，项目二两份记录的三电极共同分量在 0.55–0.80 s 明显增大。相对于 0.25–0.50 s，四个“记录×方向”组合的稳健变化约为 60.5–69.4 个源数据单位，探索性逐试次 bootstrap 区间均在零以上；平均波形的峰时约 0.66–0.74 s。该波动在左右提示中都出现，三电极平均波形沿时间轴的相关性较高。相关性不能证明生理来源，也不能把共同分量直接当成伪影；仅有三枚额区电极、没有眼电记录，不能可靠分离眼动与皮层信号。
 
@@ -56,3 +56,5 @@
 - `results/erp_curves.csv`、`spatial_mode_curves.csv`、`figures/`：响应与拟合曲线。
 - `results/filter_sensitivity.csv`、`contrast_split_half.csv`、`late_wave_summary.csv`：稳健性和晚期波动检查。
 - `results/within_record_decoding.csv`、`within_record_folds.csv`、`cross_record_decoding.csv`：左右提示判别验证。
+- `q1_filter_implementation_audit.md`、`q1_highpass_decision_report.md`：滤波实现审查和高通工作设置判断。
+- `results_highpass/q1_highpass_sensitivity_real.csv`、`q1_highpass_waveforms.csv`、`q1_filter_simulation_recovery.csv`、`figures/*.png`：固定试次的四频率比较、波形和半模拟恢复。
