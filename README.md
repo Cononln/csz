@@ -1,14 +1,14 @@
-# C题第一问：视觉提示脑电预处理与响应提取
+# 视觉认知脑电响应分析
 
 本程序只使用四个 MAT 文件的原始 Fz、F3、F4 通道（第 1–3 行）。第 8 行解析视觉提示，第 9 行解析目标和点击，第 10 行检查时间戳。设备自带的 Decon 通道不参与计算。
 
 ## 运行
 
-在 MATLAB R2024a 中，先切换到本仓库目录，再执行（将 `sourceDir` 改成你本机的 C 题数据目录）：
+在 MATLAB R2024a 中，先切换到本仓库目录，再执行：
 
 ```matlab
 addpath(pwd);
-sourceDir = "C:\path\to\C题";
+sourceDir = fullfile(pwd, "data");
 run_q1(sourceDir, fullfile(pwd, "results"));
 ```
 
@@ -48,10 +48,6 @@ A/B 互测的左右提示平衡准确率约 0.41–0.52；加入空间对比特�
 
 简明结果和论文表述见 `results_summary.md`。
 
-程序不会写入或修改原始 MAT 文件。`cross_record_decoding.csv` 是跨记录验证；只有确认 A/B 确为不同受试者后，才能称作跨受试者验证。
+程序不会写入或修改 `data/` 中的原始 MAT 文件。`cross_record_decoding.csv` 是跨记录验证；只有确认 A/B 确为不同受试者后，才能称作跨受试者验证。
 
-`results/` 是当前 0.5 Hz 主分析输出；`results_checked/` 保留了此前 0.1 Hz 的探索性运行，论文中的主结果应以 `results/` 为准。
-
-公开仓库仅提交代码、说明、聚合统计表和拟合曲线图。原始 MAT 数据不上传；逐试次 `events_and_quality.csv` 与包含处理后试次波形的 `q1_analysis.mat` 只在本地生成，可从原始数据重跑得到。这样其他人能审查算法和汇总结果，但完整复现仍需合法取得赛题数据。
-
-原始文件的名称、大小与 SHA-256 校验值见 `DATA_PROVENANCE.md`。
+`results/` 是当前 0.5 Hz 主分析输出；`results_checked/` 保留 0.1 Hz 参数下的探索性运行。项目描述与数据校验信息见 `DATA_PROVENANCE.md`；题目原文见 `problem/`。

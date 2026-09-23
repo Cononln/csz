@@ -1,0 +1,5 @@
+record,task,trials,leftCues,rightCues,rawClipped,highPeak,highJump,accepted,acceptedLeft,acceptedRight,peakThreshold,jumpThreshold
+VisualCogA_Task-1,1,100,54,46,11,13,4,80,41,39,670.099189745941,60.61502403296
+VisualCogA_Task-2,2,100,57,43,5,4,6,93,51,42,1538.99231860838,59.2244388494696
+VisualCogB_Task-1,1,100,48,52,8,3,8,87,41,46,1317.29590600443,71.0884931715878
+VisualCogB_Task-2,2,100,50,50,9,7,8,90,44,46,1599.64120546273,55.1973998626677
