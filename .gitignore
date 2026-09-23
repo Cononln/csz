@@ -1,0 +1,5 @@
+# Reproducible local outputs that should not be redistributed in a public repo.
+/results_checked/
+/results/q1_analysis.mat
+/results/events_and_quality.csv
+*.asv
